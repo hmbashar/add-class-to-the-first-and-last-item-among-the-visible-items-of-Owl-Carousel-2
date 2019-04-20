@@ -8,7 +8,7 @@ http://plnkr.co/edit/t9URfKq9Mwh9jO705h7u?p=preview
 ```
 jQuery(document).ready(function($) {
 
-    var carousel = $(".latest-work-carousel");
+    var carousel = $(".latest-work-carousel"); // Activator Class
     carousel.owlCarousel({
         loop : true,
         items : 3,
@@ -23,18 +23,18 @@ jQuery(document).ready(function($) {
     });
 
     function checkClasses(){
-        var total = $('.latest-work-carousel .owl-stage .owl-item.active').length;
+        var total = $('.latest-work-carousel .owl-stage .owl-item.active').length; // nested class from activator class
 
-        $('.latest-work-carousel .owl-stage .owl-item').removeClass('firstActiveItem lastActiveItem');
+        $('.latest-work-carousel .owl-stage .owl-item').removeClass('firstActiveItem lastActiveItem'); // nested class from activator class and remove first and last class if already added.
 
-        $('.latest-work-carousel .owl-stage .owl-item.active').each(function(index){
+        $('.latest-work-carousel .owl-stage .owl-item.active').each(function(index){ // nested class from activator class
             if (index === 0) {
                 // this is the first one
-                $(this).addClass('firstActiveItem');
+                $(this).addClass('firstActiveItem'); // add class in first item
             }
             if (index === total - 1 && total>1) {
                 // this is the last one
-                $(this).addClass('lastActiveItem');
+                $(this).addClass('lastActiveItem'); // add class in last item
             }
         });
     }
